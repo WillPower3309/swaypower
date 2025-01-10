@@ -20,7 +20,7 @@ struct cmd_results *cmd_shadows(int argc, char **argv) {
 		config->shadow_enabled = result;
 	} else {
 		con->shadow_enabled = result;
-		container_damage_whole(con);
+		container_update(con);
 	}
 
 	arrange_root();

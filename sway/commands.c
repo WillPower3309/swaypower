@@ -1,4 +1,3 @@
-#define _POSIX_C_SOURCE 200809
 #include <ctype.h>
 #include <stdarg.h>
 #include <stdlib.h>
@@ -66,11 +65,7 @@ static const struct cmd_handler handlers[] = {
 	{ "client.urgent", cmd_client_urgent },
 	{ "corner_radius", cmd_corner_radius },
 	{ "default_border", cmd_default_border },
-	{ "default_dim_inactive", cmd_default_dim_inactive },
 	{ "default_floating_border", cmd_default_floating_border },
-	{ "dim_inactive", cmd_dim_inactive },
-	{ "dim_inactive_colors.unfocused", cmd_dim_inactive_colors_unfocused },
-	{ "dim_inactive_colors.urgent", cmd_dim_inactive_colors_urgent },
 	{ "exec", cmd_exec },
 	{ "exec_always", cmd_exec_always },
 	{ "floating_maximum_size", cmd_floating_maximum_size },
@@ -88,7 +83,6 @@ static const struct cmd_handler handlers[] = {
 	{ "gaps", cmd_gaps },
 	{ "hide_edge_borders", cmd_hide_edge_borders },
 	{ "input", cmd_input },
-	{ "layer_effects", cmd_layer_effects },
 	{ "mode", cmd_mode },
 	{ "mouse_warping", cmd_mouse_warping },
 	{ "new_float", cmd_new_float },
@@ -106,14 +100,12 @@ static const struct cmd_handler handlers[] = {
 	{ "shadows_on_csd", cmd_shadows_on_csd },
 	{ "show_marks", cmd_show_marks },
 	{ "smart_borders", cmd_smart_borders },
-	{ "smart_corner_radius", cmd_smart_corner_radius },
 	{ "smart_gaps", cmd_smart_gaps },
 	{ "tiling_drag", cmd_tiling_drag },
 	{ "tiling_drag_threshold", cmd_tiling_drag_threshold },
 	{ "title_align", cmd_title_align },
 	{ "titlebar_border_thickness", cmd_titlebar_border_thickness },
 	{ "titlebar_padding", cmd_titlebar_padding },
-	{ "titlebar_separator", cmd_titlebar_separator },
 	{ "unbindcode", cmd_unbindcode },
 	{ "unbindgesture", cmd_unbindgesture },
 	{ "unbindswitch", cmd_unbindswitch },
@@ -126,7 +118,6 @@ static const struct cmd_handler handlers[] = {
 static const struct cmd_handler config_handlers[] = {
 	{ "default_orientation", cmd_default_orientation },
 	{ "include", cmd_include },
-	{ "scratchpad_minimize", cmd_scratchpad_minimize },
 	{ "primary_selection", cmd_primary_selection },
 	{ "swaybg_command", cmd_swaybg_command },
 	{ "swaynag_command", cmd_swaynag_command },
@@ -136,6 +127,7 @@ static const struct cmd_handler config_handlers[] = {
 
 /* Runtime-only commands. Keep alphabetized */
 static const struct cmd_handler command_handlers[] = {
+	{ "allow_tearing", cmd_allow_tearing },
 	{ "border", cmd_border },
 	{ "create_output", cmd_create_output },
 	{ "exit", cmd_exit },
@@ -152,7 +144,6 @@ static const struct cmd_handler command_handlers[] = {
 	{ "reload", cmd_reload },
 	{ "rename", cmd_rename },
 	{ "resize", cmd_resize },
-	{ "saturation", cmd_saturation },
 	{ "scratchpad", cmd_scratchpad },
 	{ "shortcuts_inhibitor", cmd_shortcuts_inhibitor },
 	{ "split", cmd_split },
